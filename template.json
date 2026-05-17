@@ -1,0 +1,129 @@
+{"prompt":	
+	{
+	  "3": {
+		"inputs": {
+		  "seed": 462243086425587,
+		  "steps": 30,
+		  "cfg": 9,
+		  "sampler_name": "er_sde",
+		  "scheduler": "simple",
+		  "denoise": 1,
+		  "model": [
+			"4",
+			0
+		  ],
+		  "positive": [
+			"6",
+			0
+		  ],
+		  "negative": [
+			"7",
+			0
+		  ],
+		  "latent_image": [
+			"5",
+			0
+		  ]
+		},
+		"class_type": "KSampler",
+		"_meta": {
+		  "title": "KSampler"
+		}
+	  },
+	  "4": {
+		"inputs": {
+		  "ckpt_name": "anima-base-v1.0.safetensors"
+		},
+		"class_type": "CheckpointLoaderSimple",
+		"_meta": {
+		  "title": "Load Checkpoint"
+		}
+	  },
+	  "5": {
+		"inputs": {
+		  "width": 512,
+		  "height": 768,
+		  "batch_size": 1
+		},
+		"class_type": "EmptyLatentImage",
+		"_meta": {
+		  "title": "Empty Latent Image"
+		}
+	  },
+	  "6": {
+		"inputs": {
+		  "text": "1girl,best_quality, rem_(re:_zero), @soso \\(chlgksk110\\), ",
+		  "clip": [
+			"18",
+			0
+		  ]
+		},
+		"class_type": "CLIPTextEncode",
+		"_meta": {
+		  "title": "CLIP Text Encode (Prompt)"
+		}
+	  },
+	  "7": {
+		"inputs": {
+		  "text": "low quality, worst quality, low detail, bad drawing, bad quality, oldest, (score_3, score_2, score_1:0.25), jpeg artifacts, watermark, signature, artist name, low detail, missing head, missing limb, text, bad anatomy, bad proportions, bad hands, missing fingers, ",
+		  "clip": [
+			"18",
+			0
+		  ]
+		},
+		"class_type": "CLIPTextEncode",
+		"_meta": {
+		  "title": "CLIP Text Encode (Prompt)"
+		}
+	  },
+	  "8": {
+		"inputs": {
+		  "samples": [
+			"3",
+			0
+		  ],
+		  "vae": [
+			"11",
+			0
+		  ]
+		},
+		"class_type": "VAEDecode",
+		"_meta": {
+		  "title": "VAE Decode"
+		}
+	  },
+	  "9": {
+		"inputs": {
+		  "filename_prefix": "ComfyUI",
+		  "images": [
+			"8",
+			0
+		  ]
+		},
+		"class_type": "SaveImage",
+		"_meta": {
+		  "title": "Save Image"
+		}
+	  },
+	  "11": {
+		"inputs": {
+		  "vae_name": "qwen_image_vae.safetensors"
+		},
+		"class_type": "VAELoader",
+		"_meta": {
+		  "title": "Load VAE"
+		}
+	  },
+	  "18": {
+		"inputs": {
+		  "clip_name": "qwen_3_06b_base.safetensors",
+		  "type": "qwen_image",
+		  "device": "default"
+		},
+		"class_type": "CLIPLoader",
+		"_meta": {
+		  "title": "Load CLIP"
+		}
+	  }
+	}
+}
