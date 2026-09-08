@@ -9,7 +9,7 @@
 		  "scheduler": "simple",
 		  "denoise": 1,
 		  "model": [
-			"4",
+			"10",
 			0
 		  ],
 		  "positive": [
@@ -54,8 +54,8 @@
 		"inputs": {
 		  "text": "1girl,best_quality, rem_(re:_zero), @soso \\(chlgksk110\\), ",
 		  "clip": [
-			"18",
-			0
+			"10",
+			1
 		  ]
 		},
 		"class_type": "CLIPTextEncode",
@@ -67,8 +67,8 @@
 		"inputs": {
 		  "text": "low quality, worst quality, low detail, bad drawing, bad quality, oldest, (score_3, score_2, score_1:0.25), jpeg artifacts, watermark, signature, artist name, low detail, missing head, missing limb, text, bad anatomy, bad proportions, bad hands, missing fingers, ",
 		  "clip": [
-			"18",
-			0
+			"10",
+			1
 		  ]
 		},
 		"class_type": "CLIPTextEncode",
@@ -105,6 +105,17 @@
 		  "title": "Save Image"
 		}
 	  },
+	  "10": {
+        "inputs": {
+          "lora_name": "your_lora_file.safetensors",
+          "strength_model": 1.0,
+          "strength_clip": 1.0,
+          "model": ["4", 0],
+          "clip": ["18", 0]
+       },
+       "class_type": "LoraLoader",
+       "_meta": { "title": "Load LoRA" }
+      },
 	  "11": {
 		"inputs": {
 		  "vae_name": "qwen_image_vae.safetensors"
