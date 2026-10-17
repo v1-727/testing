@@ -32,7 +32,7 @@
 	  },
 	  "4": {
 		"inputs": {
-		  "ckpt_name": "anima-base-v1.0.safetensors"
+		  "ckpt_name": "moss_image_sft_bf16.safetensors"
 		},
 		"class_type": "CheckpointLoaderSimple",
 		"_meta": {
@@ -52,7 +52,7 @@
 	  },
 	  "6": {
 		"inputs": {
-		  "text": "1girl,best_quality, rem_(re:_zero), @soso \\(chlgksk110\\), ",
+		  "text": "1girl,best_quality, ",
 		  "clip": [
 			"18",
 			0
@@ -107,7 +107,7 @@
 	  },
 	  "11": {
 		"inputs": {
-		  "vae_name": "qwen_image_vae.safetensors"
+		  "vae_name": "flux2-vae.safetensors"
 		},
 		"class_type": "VAELoader",
 		"_meta": {
@@ -116,7 +116,7 @@
 	  },
 	  "18": {
 		"inputs": {
-		  "clip_name": "qwen_3_06b_base.safetensors",
+		  "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
 		  "type": "qwen_image",
 		  "device": "default"
 		},
