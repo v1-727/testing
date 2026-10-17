@@ -107,8 +107,8 @@
           0
         ],
         "vae": [
-          "10",
-          2
+          "11",
+          0
         ]
       },
       "class_type": "VAEDecode",
@@ -116,7 +116,7 @@
         "title": "VAE Decode"
       }
     },
-    "10": {
+    "11": {
       "inputs": {
         "vae_name": "flux2-vae.safetensors"
       },
