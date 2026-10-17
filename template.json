@@ -118,11 +118,11 @@
     },
     "10": {
       "inputs": {
-        "ckpt_name": "flux2-vae.safetensors"
+        "vae_name": "flux2-vae.safetensors"
       },
-      "class_type": "CheckpointLoaderSimple",
+      "class_type": "VAELoader",
       "_meta": {
-        "title": "Load Checkpoint"
+        "title": "Load VAE"
       }
     }
   }
