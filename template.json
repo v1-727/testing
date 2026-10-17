@@ -32,7 +32,7 @@
     },
     "2": {
       "inputs": {
-        "ckpt_name": "moss_image_sft_bf16.safetensors"
+        "ckpt_name": "moss_image_sft_int8_convrot.safetensors"
       },
       "class_type": "CheckpointLoaderSimple",
       "_meta": {
