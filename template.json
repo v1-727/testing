@@ -107,7 +107,7 @@
 	  },
 	  "10": {
         "inputs": {
-          "lora_name": "Quicksand 1.safetensors",
+          "lora_name": "your_lora_file.safetensors",
           "strength_model": 1.0,
           "strength_clip": 1.0,
           "model": ["4", 0],
