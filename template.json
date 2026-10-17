@@ -1,129 +1,127 @@
-{"prompt":	
-	{
-	  "3": {
-		"inputs": {
-		  "seed": 462243086425587,
-		  "steps": 30,
-		  "cfg": 9,
-		  "sampler_name": "er_sde",
-		  "scheduler": "simple",
-		  "denoise": 1,
-		  "model": [
-			"4",
-			0
-		  ],
-		  "positive": [
-			"6",
-			0
-		  ],
-		  "negative": [
-			"7",
-			0
-		  ],
-		  "latent_image": [
-			"5",
-			0
-		  ]
-		},
-		"class_type": "KSampler",
-		"_meta": {
-		  "title": "KSampler"
-		}
-	  },
-	  "4": {
-		"inputs": {
-		  "ckpt_name": "moss_image_sft_int8_convrot.safetensors"
-		},
-		"class_type": "CheckpointLoaderSimple",
-		"_meta": {
-		  "title": "Load Checkpoint"
-		}
-	  },
-	  "5": {
-		"inputs": {
-		  "width": 512,
-		  "height": 768,
-		  "batch_size": 1
-		},
-		"class_type": "EmptyLatentImage",
-		"_meta": {
-		  "title": "Empty Latent Image"
-		}
-	  },
-	  "6": {
-		"inputs": {
-		  "text": "1girl,best_quality, ",
-		  "clip": [
-			"18",
-			0
-		  ]
-		},
-		"class_type": "CLIPTextEncode",
-		"_meta": {
-		  "title": "CLIP Text Encode (Prompt)"
-		}
-	  },
-	  "7": {
-		"inputs": {
-		  "text": "low quality, worst quality, low detail, bad drawing, bad quality, oldest, (score_3, score_2, score_1:0.25), jpeg artifacts, watermark, signature, artist name, low detail, missing head, missing limb, text, bad anatomy, bad proportions, bad hands, missing fingers, ",
-		  "clip": [
-			"18",
-			0
-		  ]
-		},
-		"class_type": "CLIPTextEncode",
-		"_meta": {
-		  "title": "CLIP Text Encode (Prompt)"
-		}
-	  },
-	  "8": {
-		"inputs": {
-		  "samples": [
-			"3",
-			0
-		  ],
-		  "vae": [
-			"11",
-			0
-		  ]
-		},
-		"class_type": "VAEDecode",
-		"_meta": {
-		  "title": "VAE Decode"
-		}
-	  },
-	  "9": {
-		"inputs": {
-		  "filename_prefix": "ComfyUI",
-		  "images": [
-			"8",
-			0
-		  ]
-		},
-		"class_type": "SaveImage",
-		"_meta": {
-		  "title": "Save Image"
-		}
-	  },
-	  "11": {
-		"inputs": {
-		  "vae_name": "flux2-vae.safetensors"
-		},
-		"class_type": "VAELoader",
-		"_meta": {
-		  "title": "Load VAE"
-		}
-	  },
-	  "18": {
-		"inputs": {
-		  "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
-		  "type": "qwen_image",
-		  "device": "default"
-		},
-		"class_type": "CLIPLoader",
-		"_meta": {
-		  "title": "Load CLIP"
-		}
-	  }
-	}
+{
+  "1": {
+    "inputs": {
+      "seed": 0,
+      "steps": 30,
+      "cfg": 7,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent_image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "2": {
+    "inputs": {
+      "ckpt_name": "moss_image_sft_bf16.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "1girl",
+      "clip": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "low quality, worst quality, low detail, bad drawing, bad quality, oldest, (score_3, score_2, score_1:0.25), jpeg artifacts, watermark, signature, artist name, low detail, missing head, missing limb, text, bad anatomy, bad proportions, bad hands, missing fingers, ",
+      "clip": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
+      "type": "stable_diffusion",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "1",
+        0
+      ],
+      "vae": [
+        "10",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "10": {
+    "inputs": {
+      "ckpt_name": "flux2-vae.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  }
 }
